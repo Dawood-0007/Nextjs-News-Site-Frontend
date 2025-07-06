@@ -33,8 +33,8 @@ export default async function Article({ params }) {
 }
 
 const metadata = {
-  title: `Khatreez - Article ${params.id}`,
-  description: `Read the latest insights on Khatreez - Article ${params.id}.`,
+  title: "Khatreez - Article",
+  description: "Read the latest insights on Khatreez.",
   icons: {
     icon: './icon.png',
     shortcut: './icon.png',

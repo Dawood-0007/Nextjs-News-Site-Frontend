@@ -32,8 +32,8 @@ export default async function ArticleType({ params }) {
 }
 
 const metadata = {
-  title: `Khatreez - ${params.type} Articles`,
-  description: `Explore ${params.type} articles on Khatreez.`,
+  title: `Khatreez - Articles`,
+  description: `Explore articles on Khatreez.`,
   icons: {
     icon: './icon.png',
     shortcut: './icon.png',
