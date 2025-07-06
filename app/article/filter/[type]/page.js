@@ -10,10 +10,16 @@ export async function generateStaticParams() {
 }
 
 async function getArticlesByType(type) {
-  const res = await fetch(`https://khatreezserver.vercel.app/articles/filter/${encodeURIComponent(type)}/100000`)
-  return res.json()
+  try {
+    const res = await fetch(`https://khatreezserver.vercel.app/articles/filter/${encodeURIComponent(type)}/100000`);
+    if (!res.ok) throw new Error("Failed to fetch articles");
+    const data = await res.json();
+    return Array.isArray(data) ? data : []; // Force return an array
+  } catch (error) {
+    console.error(error);
+    return []; // Fallback to empty array
+  }
 }
-
 export const revalidate = 3600 
 
 export default async function ArticleType({ params }) {

@@ -4,12 +4,13 @@ import "../assets/Blogs.css"
 import BlogSubDisplay from './BlogSubDisplay'
 
 const ArticlesStatus = ({ type, initialArticles }) => {
-  const [limit, setLimit] = useState(10)
-  
-  const visibleArticles = initialArticles.slice(0, limit)
+  const [limit, setLimit] = useState(10);
+  const safeArticles = Array.isArray(initialArticles) ? initialArticles : [];
+  const visibleArticles = safeArticles.slice(0, limit);
+
 
   const loadMoreArticles = () => {
-    setLimit(prev => prev + 10)
+    setLimit(prev => prev + 10);
   }
 
   return (
