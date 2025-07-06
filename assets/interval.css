@@ -1,0 +1,36 @@
+.interval-div {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.interval-div h1{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+.interval-div-h1:hover {
+    text-decoration: underline;
+}
+
+.interval-div p{
+    font-size: large;
+}
+
+@media (max-width: 460px) {
+    .interval-div h1{
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+    
+    .interval-div p{
+        font-size: medium;
+    }
+    
+}
+
+@media (max-width: 415px) {  
+    .interval-div p{
+        font-size: small;
+    }
+    
+}

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Eater&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    justify-content: space-between;
+    background-color: rgb(240, 237, 237);
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding-top: 30px;
+    height: 15vh;
+    align-items: center;
+}
+
+.footer-main h1 {
+    height: 35px;
+    font-size: large;
+    font-family: "Eater", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main-div-ul {
+    display: flex;
+    gap: 20px;
+}
+
+.main-div-ul li {
+    list-style: none;
+    cursor: pointer;
+    padding: 0px 10px;
+    color: rgb(73, 72, 72);
+}
+
+.main-div-ul li:hover {
+    text-decoration: underline;
+    color: black;
+    transition: 0.5s;
+}
+
+.footer-opt {
+    margin: 0px 10px;
+    color: rgb(73, 72, 72);
+    cursor: pointer;
+}
+
+.footer-opt:hover {
+    color: black;
+}
+
+.footer-end {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+
+@media (max-width: 630px) {
+    .footer-main h1 {
+        height: 35px;
+        font-size: medium;
+    }
+    .main-div-ul li {
+        padding: 0px 5px;
+        font-size: 15px;
+        color: rgb(73, 72, 72);
+    }
+    .footer-opt {
+        margin: 0px 5px;
+        font-size: 17px;
+    }
+    .footer-end {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 530px) {
+    .footer-main {
+        flex-direction: column;
+        height: 60%;
+        gap: 5px;
+        padding-top: 10px;
+    }
+    .footer-end {
+        font-size: small;
+        height: 30px;
+        padding: 2px 5px;
+    }
+}
