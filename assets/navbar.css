@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Eater&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
@@ -72,7 +73,7 @@ body {
   height: 45px;
   font-size: 1.5rem;
   padding-left: 15px;
-  font-family: cursive;
+  font-family: "Eater", serif;
   font-weight: 400;
   font-style: normal;
 }
