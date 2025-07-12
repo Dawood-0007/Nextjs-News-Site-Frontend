@@ -12,8 +12,8 @@ async function getAllArticles() {
   }
 }
 
-const About = () => {
-  const allArticles = getAllArticles();
+export default async function About (){
+  const allArticles = await getAllArticles();
 
   return (
     <div>
@@ -34,5 +34,3 @@ export async function generateMetadata() {
   }
   }
 }
-
-export default About
