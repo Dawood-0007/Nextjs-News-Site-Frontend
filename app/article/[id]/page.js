@@ -14,6 +14,16 @@ export async function generateStaticParams() {
   }))
 }
 
+async function getAllArticles() {
+  try {
+    const res = await fetch("https://khatreezserver.vercel.app/data/blogdisplay/100000");
+    return await res.json();
+  } catch (error) {
+    console.error("Failed to fetch articles:", error);
+    return [];
+  }
+}
+
 // Fetch the specific post data
 async function getPostData(id) {
   const res = await fetch(`https://khatreezserver.vercel.app/data/article/${id}`)
@@ -22,10 +32,11 @@ async function getPostData(id) {
 
 export default async function Article({ params }) {
   const postData = await getPostData(params.id)
+  const allArticles = await getAllArticles();
   
   return (
     <div>
-      <Navbar />
+      <Navbar allArticles={allArticles} />
       <SingleBlog initialData={postData[0]} />
       <Footer />
     </div>

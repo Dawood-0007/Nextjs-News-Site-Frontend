@@ -2,10 +2,22 @@ import React from 'react'
 import Contact from '@/components/Contact'
 import Navbar from "@/components/Navbar";
 
+async function getAllArticles() {
+  try {
+    const res = await fetch("https://khatreezserver.vercel.app/data/blogdisplay/100000");
+    return await res.json();
+  } catch (error) {
+    console.error("Failed to fetch articles:", error);
+    return [];
+  }
+}
+
 const About = () => {
+  const allArticles = getAllArticles();
+
   return (
     <div>
-                <Navbar />
+      <Navbar allArticles={allArticles} />
       <Contact />
     </div>
   )

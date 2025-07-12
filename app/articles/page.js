@@ -8,7 +8,7 @@ export const revalidate = 3600;
 
 async function getInitialData() {
   try {
-    const response = await axios.get('https://khatreezserver.vercel.app/data/blogdisplay/1000');
+    const response = await axios.get('https://khatreezserver.vercel.app/data/blogdisplay/100000');
     return response.data;
   } catch (err) {
     return [];
@@ -22,7 +22,7 @@ const Articles = async () => {
 
   return (
     <div>
-        <><Navbar /><BlogDisplay initialData={initialData} /><Footer /></>
+        <><Navbar allArticles={initialData} /><BlogDisplay initialData={initialData} /><Footer /></>
     </div>
   )
 }

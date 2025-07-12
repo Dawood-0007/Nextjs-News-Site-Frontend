@@ -5,6 +5,16 @@ import Footer from "@/components/Footer";
 import Interval from "@/components/Interval";
 import CategoriesComponent from "@/components/CategoriesComponent";
 
+async function getAllArticles() {
+  try {
+    const res = await fetch("https://khatreezserver.vercel.app/data/blogdisplay/100000");
+    return await res.json();
+  } catch (error) {
+    console.error("Failed to fetch articles:", error);
+    return [];
+  }
+}
+
 async function getHomeData() {
   try {
     const [featuredRes, blogsRes] = await Promise.all([
@@ -27,10 +37,11 @@ async function getHomeData() {
 
 export default async function Home() {
   const { featuredPost, blogPosts } = await getHomeData();
+  const allArticles = await getAllArticles();
 
   return (
     <>
-      <Navbar />
+      <Navbar allArticles={allArticles} />
       <FirstComponent featuredPost={featuredPost?.[0]} />
       <Interval
         title="See Latest"
