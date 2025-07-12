@@ -2,11 +2,10 @@ import React from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SingleBlog from '@/components/SingleBlog'
-import axios from 'axios'
 
 export async function generateStaticParams() {
-  const res = await axios.get('https://khatreezserver.vercel.app/data/blogdisplay/100000')
-  const posts = res.data
+  const res = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLES)
+  const posts = await res.json()
 
   return posts.map(post => ({
     id: post.id.toString()
@@ -15,8 +14,8 @@ export async function generateStaticParams() {
 
 async function getAllArticles() {
   try {
-    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLES);
-    return res.data;
+    const res = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLES);
+    return res.json();
   } catch (error) {
     console.error("Failed to fetch articles:", error);
     return [];
@@ -24,8 +23,8 @@ async function getAllArticles() {
 }
 
 async function getPostData(id) {
-  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLE_BY_ID + id)
-  return res.data
+  const res = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLE_BY_ID + id)
+  return res.json()
 }
 
 export default async function Article({ params }) {

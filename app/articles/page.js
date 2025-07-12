@@ -2,14 +2,11 @@ import React from 'react'
 import Navbar from '@/components/Navbar'
 import BlogDisplay from '@/components/BlogDisplay'
 import Footer from '@/components/Footer'
-import axios from 'axios';
-
-export const revalidate = 3600; 
 
 async function getInitialData() {
   try {
-    const response = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLES);
-    return response.data;
+    const response = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLES);
+    return response.json();
   } catch (err) {
     return [];
   }

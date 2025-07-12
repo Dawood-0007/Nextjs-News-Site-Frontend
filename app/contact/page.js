@@ -1,12 +1,11 @@
 import React from 'react'
 import Contact from '@/components/Contact'
 import Navbar from "@/components/Navbar";
-import axios from 'axios';
 
 async function getAllArticles() {
   try {
-    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLES);
-    return res.datsa;
+    const res = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLES);
+    return res.json();
   } catch (error) {
     console.error("Failed to fetch articles:", error);
     return [];
@@ -26,8 +25,8 @@ const About = () => {
 
 export async function generateMetadata() {
   return {
-    title: 'Khatreez - About Us',
-    description: 'Learn more about us and our mission.',
+    title: 'Khatreez - Contact Us',
+    description: 'Get in touch with us for any inquiries or support.',
     icons: {
     icon: './icon.png',
     shortcut: './icon.png',
