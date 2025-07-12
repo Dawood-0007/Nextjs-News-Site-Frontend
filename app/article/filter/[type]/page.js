@@ -20,9 +20,10 @@ async function getAllArticles() {
 
 async function getArticlesByType(type) {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLE_FILTER + `${encodeURIComponent(type)}/100000`);
+    const res = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLE_FILTER + `${type}/100000`);
     if (!res.ok) throw new Error("Failed to fetch articles");
-    return Array.isArray(await res.json()) ? await res.json() : [];
+    const data = await res.json();
+    return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error(error);
     return []; 
@@ -30,14 +31,16 @@ async function getArticlesByType(type) {
 }
 
 export default async function ArticleType({ params }) {
-  const initialArticles = await getArticlesByType(params.type)
+  const { type } = params; 
+
+  const initialArticles = await getArticlesByType(type)
   const allArticles = await getAllArticles();
   
   return (
     <div>
       <Navbar allArticles={allArticles} />
       <ArticlesStatus 
-        type={params.type} 
+        type={type} 
         initialArticles={initialArticles} 
       />
       <Footer />
