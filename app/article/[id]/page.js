@@ -24,7 +24,7 @@ async function getAllArticles() {
 }
 
 async function getPostData(id) {
-  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLE_BY_ID + `${id}`)
+  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLE_BY_ID + id)
   return res.data
 }
 
