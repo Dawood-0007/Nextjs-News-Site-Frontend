@@ -28,7 +28,7 @@ export async function GET(request) {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        // CORS headers (only for allowed origins)
+        
         'Access-Control-Allow-Origin': origin || '*',
         'Access-Control-Allow-Methods': 'GET',
         'Access-Control-Allow-Headers': 'Content-Type, Authorization'

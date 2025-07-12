@@ -4,11 +4,13 @@ import BlogList from "@/components/BlogList";
 import Footer from "@/components/Footer";
 import Interval from "@/components/Interval";
 import CategoriesComponent from "@/components/CategoriesComponent";
+import axios from "axios";
+
 
 async function getAllArticles() {
   try {
-    const res = await fetch("https://khatreezserver.vercel.app/data/blogdisplay/100000");
-    return await res.json();
+    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLES);
+    return res.data;
   } catch (error) {
     console.error("Failed to fetch articles:", error);
     return [];
@@ -18,13 +20,13 @@ async function getAllArticles() {
 async function getHomeData() {
   try {
     const [featuredRes, blogsRes] = await Promise.all([
-      fetch("https://khatreezserver.vercel.app/data/blogmain"),
-      fetch("https://khatreezserver.vercel.app/data/blogcomponent")
+      axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLES_MAIN),
+      axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLES_COMPONENT)
     ]);
     
     return {
-      featuredPost: await featuredRes.json(),
-      blogPosts: await blogsRes.json()
+      featuredPost: featuredRes.data,
+      blogPosts: blogsRes.data
     };
   } catch (error) {
     console.error("Failed to fetch home data:", error);

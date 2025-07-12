@@ -8,7 +8,7 @@ export const revalidate = 3600;
 
 async function getInitialData() {
   try {
-    const response = await axios.get('https://khatreezserver.vercel.app/data/blogdisplay/100000');
+    const response = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLES);
     return response.data;
   } catch (err) {
     return [];

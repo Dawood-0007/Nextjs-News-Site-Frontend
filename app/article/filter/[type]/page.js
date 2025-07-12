@@ -1,8 +1,8 @@
-// app/articles/type/[type]/page.js
 import React from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ArticlesStatus from '@/components/ArticlesStatus'
+import axios from 'axios'
 
 export async function generateStaticParams() {
   const types = ['Politics', 'Economics', 'Statistics', 'Social']
@@ -11,8 +11,8 @@ export async function generateStaticParams() {
 
 async function getAllArticles() {
   try {
-    const res = await fetch("https://khatreezserver.vercel.app/data/blogdisplay/100000");
-    return await res.json();
+    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLES);
+    return res.data;
   } catch (error) {
     console.error("Failed to fetch articles:", error);
     return [];
@@ -21,13 +21,12 @@ async function getAllArticles() {
 
 async function getArticlesByType(type) {
   try {
-    const res = await fetch(`https://khatreezserver.vercel.app/articles/filter/${encodeURIComponent(type)}/100000`);
-    if (!res.ok) throw new Error("Failed to fetch articles");
-    const data = await res.json();
-    return Array.isArray(data) ? data : []; // Force return an array
+    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_ARTICLE_FILTER + `${encodeURIComponent(type)}/100000`);
+    if (res.status !== 200) throw new Error("Failed to fetch articles");
+    return Array.isArray(res.data) ? res.data : [];
   } catch (error) {
     console.error(error);
-    return []; // Fallback to empty array
+    return []; 
   }
 }
 export const revalidate = 3600 
