@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <link rel="icon" href={metadata.icons.icon} />
       </Head>
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
