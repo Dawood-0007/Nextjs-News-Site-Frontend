@@ -57,7 +57,7 @@ const Navbar = ({ allArticles = [] }) => {
                 searchResults.map((article) => (
                   <Link 
                     key={article.id} 
-                    href={`/article/${article.id}`}
+                    href={`/article/${article.slug}`}
                     className="suggestion-item"
                     onClick={() => {
                       setSearchValue("");
