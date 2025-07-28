@@ -6,7 +6,7 @@ import Link from 'next/link'
 const BlogListComponent = (props) => {
   return (
     <Link
-      href={props?.id ? `/article/${props.id}` : "#"}
+      href={props?.slug ? `/article/${props.slug}` : "#"}
       className='podcast-card blog-contain navlink'>
       <div className='card-img'>
         {props?.src ? <img src={props.src} alt="Title" /> : <p>Image not available</p>}

@@ -13,6 +13,7 @@ const BlogList = ({ initialPosts }) => {
             <BlogListComponent
               key={article.id}
               id={article.id}
+              slug={article.slug}
               src={article.imageurl}
               title={article.title}
               text={article.article}

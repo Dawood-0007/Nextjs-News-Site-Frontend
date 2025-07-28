@@ -16,6 +16,7 @@ const BlogDisplay = ({ initialData }) => {
         <BlogSubDisplay
           key={article.id}
           id={article.id}
+          slug={article.slug}
           src={article.imageurl}
           title={article.title}
           text={article.article.substring(0, 50)}

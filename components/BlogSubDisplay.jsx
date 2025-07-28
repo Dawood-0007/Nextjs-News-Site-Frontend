@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const BlogSubDisplay = (props) => {
   return (
-      <Link href={`/article/${props.id}`} className='blog-element navlink' id={props.id}>
+      <Link href={`/article/${props.slug}`} className='blog-element navlink' id={props.id}>
         <img src={props.src} alt="Article Photo"/>
             <div className='blog-element-div' >
                 <h1>{props.title}</h1>

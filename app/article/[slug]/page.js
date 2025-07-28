@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   const posts = await res.json()
 
   return posts.map(post => ({
-    id: post.id.toString()
+    slug: post.slug.toString()
   }))
 }
 
@@ -22,13 +22,14 @@ async function getAllArticles() {
   }
 }
 
-async function getPostData(id) {
-  const res = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLE_BY_ID + id)
+async function getPostData(slug) {
+  const res = await fetch(process.env.NEXT_PUBLIC_URL_ARTICLE_BY_ID + "slug/" + slug)
   return res.json()
 }
 
-export default async function Article({ params }) {
-  const postData = await getPostData(params.id)
+export default async function Article(props) {
+  const { slug } = await props.params;
+  const postData = await getPostData(slug);
   const allArticles = await getAllArticles();
   
   return (

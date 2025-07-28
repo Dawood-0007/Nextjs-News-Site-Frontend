@@ -15,7 +15,7 @@ function FirstComponent({ featuredPost }) {
   }
 
   return (
-    <Link href={`/article/${featuredPost.id}`} className="custom-link">
+    <Link href={`/article/${featuredPost.slug}`} className="custom-link">
       <div className="main-1 flex">
         <div className="left">
           <h1>{featuredPost.title}</h1>
