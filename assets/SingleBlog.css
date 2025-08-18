@@ -29,6 +29,8 @@
 .sub img {
     width: 50vw;
     margin: auto;
+    object-fit: contain;
+    height: 50vh;
 }
 .sub p {
     font-size: large;
