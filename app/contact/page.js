@@ -25,7 +25,7 @@ export default async function About (){
 
 export async function generateMetadata() {
   return {
-    title: 'Khatreez - Contact Us',
+    title: 'Kalyptica - Contact',
     description: 'Get in touch with us for any inquiries or support.',
     icons: {
     icon: './icon.png',

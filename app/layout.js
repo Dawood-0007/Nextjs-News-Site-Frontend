@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Khatreez",
-  description: "Khatreez - Your Source for Articles",
+  title: "Kalyptica",
+  description: "Kalyptica - Your Source for Articles",
   icons: {
-    icon: './KhatreezLogo.png',
+    icon: './icon.png',
   }
 };
 

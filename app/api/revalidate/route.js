@@ -10,8 +10,8 @@ export async function GET(request) {
   }
 
   const allowedOrigins = [
-    'https://khatreez-admin.vercel.app',
-    'https://khatreez-server.vercel.app',
+    'https://kalyptica-admin.vercel.app',
+    'https://kalypticaserver.vercel.app',
   ];
 
   if (origin && !allowedOrigins.includes(origin)) {

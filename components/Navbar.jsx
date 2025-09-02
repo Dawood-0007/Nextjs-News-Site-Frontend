@@ -29,7 +29,7 @@ const Navbar = ({ allArticles = [] }) => {
   return (
     <div className={`navbar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
       <nav className="nav-main">
-        <p className="navName">Khatreez</p>
+        <p className="navName">Kalyptica</p>
         
         <button className="line-btn" onClick={toggleMobileMenu}>☰</button>
         

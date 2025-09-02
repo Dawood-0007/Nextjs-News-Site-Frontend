@@ -25,7 +25,7 @@ const Articles = async () => {
 }
 
 const metadata = {
-  title: "Khatreez - Articles",
+  title: "Kalyptica - Articles",
   description: "Explore a wide range of articles on various topics.",
   icons: {
     icon: './icon.png',

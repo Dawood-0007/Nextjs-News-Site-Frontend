@@ -57,8 +57,8 @@ export default async function Home() {
 }
 
 export const metadata = {
-  title: "Khatreez - Home",
-  description: "Welcome to Khatreez, your source for insightful articles and updates.",
+  title: "Kalyptica - Home",
+  description: "Welcome to Kalyptica, your source for insightful articles and updates.",
   icons: {
     icon: './icon.png',
     shortcut: './icon.png',

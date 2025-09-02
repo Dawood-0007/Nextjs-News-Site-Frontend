@@ -42,8 +42,8 @@ export default async function Article(props) {
 }
 
 const metadata = {
-  title: "Khatreez - Article",
-  description: "Read the latest insights on Khatreez.",
+  title: "Kalyptica - Article",
+  description: "Read the latest insights on Kalyptica.",
   icons: {
     icon: './icon.png',
     shortcut: './icon.png',
