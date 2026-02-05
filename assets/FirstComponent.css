@@ -40,6 +40,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     position: absolute;
     bottom: 0px;
 }
@@ -48,7 +49,7 @@
     padding: 0px 5px;
     font-size: smaller;
     font-weight: 300;
-    margin-right: 30px;
+    width: max-content;
 }
 
 .right {
