@@ -31,7 +31,7 @@ async function getArticlesByType(type) {
 }
 
 export default async function ArticleType({ params }) {
-  const { type } = params; 
+  const { type } = await params; 
 
   const initialArticles = await getArticlesByType(type)
   const allArticles = await getAllArticles();

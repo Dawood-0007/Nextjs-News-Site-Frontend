@@ -89,6 +89,10 @@
     height: 45vh;
 }
 
+.card-info {
+    padding: 5px;
+}
+
 @media (max-width: 1190px) {
     .podcast-card div h2{
         font-size: 15px;
