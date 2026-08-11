@@ -1,5 +1,4 @@
 import React from 'react'
-// import XIcon from '@mui/icons-material/X';
 import "../assets/Footer.css";
 import Link from 'next/link';
 
@@ -16,7 +15,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className='opt'>
-                    <a href="https://www.x.com/Kalyptica" target="_blank" rel="noopener noreferrer" className='footer-opt'>X</a>
+                    <a href="https://www.x.com/Kalyptica" target="_blank" rel="noopener noreferrer" className='footer-opt'>𝕏</a>
             </div>
         </div>
         <div className='footer-end'>
